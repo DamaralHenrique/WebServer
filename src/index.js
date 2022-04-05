@@ -1,11 +1,15 @@
 import express, { response } from 'express';
 import productRouter from './products.js';
+import streamsRouter from './streams.js';
+import channelsRouter from './channels.js';
 
 const server = express();
 const PORT = 3000;
 
 server.use(express.json());
 server.use('/products/', productRouter);
+server.use('/stream/', streamsRouter);
+server.use('/canal/', channelsRouter);
 
 server.get('/', (req, res) => { // req = requisicao, res = resposta
     console.log('Hello web');
