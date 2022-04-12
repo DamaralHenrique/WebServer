@@ -2,6 +2,7 @@ import express from 'express';
 import {
   productRouter, streamsRouter, channelsRouter, gamesRouter,
 } from './routes/imports.js';
+
 const server = express();
 const PORT = 3000;
 
@@ -10,6 +11,7 @@ server.use('/products/', productRouter);
 server.use('/stream/', streamsRouter);
 server.use('/canal/', channelsRouter);
 server.use('/jogo/', gamesRouter);
+
 
 server.get('/', (req, res) => { // req = requisicao, res = resposta
   console.log('Hello web');
