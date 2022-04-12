@@ -1,14 +1,15 @@
 import express from 'express';
-import { productRouter } from './routes/imports.js';
-//   productRouter, streamsRouter, channelsRouter, gamesRouter,
+import {
+  productRouter, streamsRouter, channelsRouter, gamesRouter,
+} from './routes/imports.js';
 const server = express();
 const PORT = 3000;
 
 server.use(express.json());
 server.use('/products/', productRouter);
-// server.use('/stream/', streamsRouter);
-// server.use('/canal/', channelsRouter);
-// server.use('/jogo/', gamesRouter);
+server.use('/stream/', streamsRouter);
+server.use('/canal/', channelsRouter);
+server.use('/jogo/', gamesRouter);
 
 server.get('/', (req, res) => { // req = requisicao, res = resposta
   console.log('Hello web');
